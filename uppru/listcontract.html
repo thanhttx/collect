@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.thymeleaf.org"
+	layout:decorator="templates/layout">
+<head>
+
+</head>
+<body>
+	<div layout:fragment="content">
+
+
+		<ol class="breadcrumb">
+			<li><a href="#">Trang chủ</a></li>
+			<li class="active" th:text="#{contract.list.info}"></li>
+		</ol>
+		<!-- start Danh sach hop dong -->
+
+		<div class="row title-page">
+			<div class="col-sm-12 col-xs-12">
+				<h1 th:text="#{contract.list.mycontract}"></h1>
+			</div>
+
+		</div>
+		<div class="panel panel-default table-responsive">
+			<!-- Default panel contents -->
+
+
+			<!-- Table -->
+			<table class="table table-bordered">
+
+				<thead>
+					<tr class="bg-defaut">
+						<th colspan="7"><h4 th:text="#{contract.list.listcontract}"></h4></th>
+					</tr>
+				</thead>
+				<thead>
+					<tr>
+						<th class="text-center" th:text="#{contract.list.contractno}"></th>
+						<th class="text-center" th:text="#{contract.list.mainproduct}"></th>
+						<th class="text-center" th:text="#{contract.list.forcedate}"></th>
+						<th class="text-center" th:text="#{contract.list.deadlinecontractdate}"></th>
+						<th class="text-center" th:text="#{contract.list.statuscontract}"></th>
+						<th class="text-center" th:text="#{contract.list.mainpeopleinsurrancedname}"></th>
+						<th class="text-center" th:text="#{contract.list.amountmoneymain}"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="contract: ${lstContract}">
+						<td th:text="${contract.contractNo}"></td>
+						<td th:text="${contract.mainProduct}"></td>
+						<td th:text="${contract.forceDate}"></td>
+						<td th:text="${contract.deadlineContractDate}"></td>
+						<td th:text="${contract.statusContract}"></td>
+						<td th:text="${contract.mainPeopleInsurrancedName}"></td>
+						<td th:text="${contract.amountMoneyMain}"></td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+		<!-- Phân trang -->
+		<div class="text-center">
+			<nav>
+				<ul class="pagination">
+					<li><a href="#" aria-label="Previous"> <span
+							aria-hidden="true" th:text="#{contract.list.pagin.previous}"></span>
+					</a></li>
+					<li class="active"><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#" aria-label="Next"> <span
+							aria-hidden="true" th:text="#{contract.list.pagin.next}"></span>
+					</a></li>
+				</ul>
+			</nav>
+		</div>
+		<!-- end Phân trang -->
+		<!-- end Danh sach hop dong -->
+
+	</div>
+</body>
+</html>

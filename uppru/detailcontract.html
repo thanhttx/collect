@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.thymeleaf.org"
+	layout:decorator="templates/layout">
+
+<div layout:fragment="content">
+
+	<ol class="breadcrumb">
+		<li><a href="#">Trang chủ</a></li>
+		<li class="active" th:text="#{contract.infocontract}"></li>
+	</ol>
+	<!-- start Content -->
+	<h1>
+		<label th:text="#{contract.title}"></label> <label th:text="${contract.contactNo}"></label> <label
+			th:text="${contract.contactNo}"></label>
+	</h1>
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="m-col-1">
+				<h3 th:text="${contract.amountMoneyMain}"></h3>
+			</div>
+			<div class="m-col-2" th:text="#{ccontract.amountmoneymain}"></div>
+		</div>
+		<div class="col-sm-4">
+			<div class="m-col-1">
+				<h3>150,000,000 đồng</h3>
+			</div>
+			<div class="m-col-2">Bảo tức tích luỹ tinhd đến ngày 31/12/2015</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="m-col-1">
+				<h3 th:text="${contract.expiredContactDate}"></h3>
+			</div>
+			<div class="m-col-2" th:text="#{contract.expiredcontactdate}"></div>
+		</div>
+	</div>
+
+	<div class="panel panel-default table-responsive">
+		<!-- Default panel contents -->
+
+		<!-- Table -->
+		<table class="table table-bordered">
+
+			<thead>
+				<tr class="bg-defaut">
+					<th colspan="3"><h4 th:text="#{contract.info}"></h4></th>
+					<th class="red-text text-center"
+						style="padding-bottom: 20px; font-weight: 300;" th:text="#{contract.editinfo}"><span
+						class="glyphicon glyphicon-edit"></span></th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td th:text="#{contract.contactno}"></td>
+					<td colspan="3" th:text="${contract.contactNo}"></td>
+
+				</tr>
+				<tr>
+					<td th:text="#{contract.mainproduct}"></td>
+					<td colspan="3"><span class="red-text">PHÚ</span>-<label
+						th:text="${contract.mainProduct}"></label></td>
+
+				</tr>
+				<tr>
+					<td th:text="#{contract.customerbuyname}"></td>
+					<td colspan="3" th:text="${contract.customerBuyName}"></td>
+
+				</tr>
+				<tr>
+					<td th:text="#{contract.mobileno}"></td>
+					<td th:text="${contract.mobileNo}"></td>
+					<td th:text="#{contract.email}"></td>
+					<td th:text="${contract.email}"></td>
+
+				</tr>
+				<tr>
+					<td th:text="#{contract.address}"></td>
+					<td colspan="3" th:text="${contract.address}"></td>
+
+				</tr>
+				<tr>
+					<td th:text="#{contract.mainpeopleinsurrancedname}"></td>
+					<td th:text="${contract.mainPeopleInsurrancedName}"></td>
+					<td th:text="#{contract.statuscontract}"></td>
+					<td th:text="${contract.statusContract}"></td>
+				</tr>
+				<tr>
+					<td th:text="#{contract.forcedate}"></td>
+					<td th:text="${contract.forceDate}"></td>
+					<td th:text="#{contract.deadlinecontractdate}"></td>
+					<td th:text="${contract.deadlineContractDate}"></td>
+				</tr>
+				<tr>
+					<td th:text="#{contract.certificatedate}"></td>
+					<td th:text="${contract.certificateDate}"></td>
+					<td th:text="#{contract.timespayfee}"></td>
+					<td th:text="${contract.timesPayFee}"></td>
+				</tr>
+				<tr>
+					<td th:text="#{contract.periodcostfee}"></td>
+					<td th:text="${contract.periodCostFee}"></td>
+					<td th:text="#{contract.periodtimefee}"></td>
+					<td th:text="${contract.periodTimeFee}"></td>
+				</tr>
+				<tr>
+					<td th:text="#{contract.periodcostfeenextdate}"></td>
+					<td th:text="${contract.periodCostFeeNextDate}"></td>
+					<td colspan="2"><button type="button"
+							class="btn btn-danger btn-sm" th:text="#{contract.btn.payfee}"></button></td>
+
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel-group">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+
+						<div class="row">
+							<div class="col-sm-9">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapse1"><span
+										class="red-text"> > </span> <label th:text="#{contract.peopleinsurranced.title}"></label></a>
+								</h4>
+							</div>
+							<div class="col-sm-3 text-right">
+								<span class="red-text"
+									style="padding-bottom: 20px; font-weight: 300;"> <span
+									class="glyphicon glyphicon-edit"></span> <label th:text="#{contract.peopleinsurranced.editinfo}"></label>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div id="collapse1" class="panel-collapse collapse">
+						<div class="panel-body">
+							<div class="table-responsive">
+								<div align="left">
+									<!-- Default panel contents -->
+
+									<!-- Table -->
+									<table class="table table-bordered">
+										<thead>
+											<tr>
+												<th class="text-center" th:text="#{contract.peopleinsurranced.pruductname}"></th>
+												<th class="text-center" th:text="#{contract.peopleinsurranced.forcedate}"></th>
+												<th class="text-center" th:text="#{contract.peopleinsurranced.expireddate}"></th>
+												<th class="text-center" th:text="#{contract.peopleinsurranced.amountmoney}"></th>
+												<th class="text-center" th:text="#{contract.peopleinsurranced.periodcostfee}"></th>
+												<th class="text-center" th:text="#{contract.peopleinsurranced.status}"></th>
+											</tr>
+										</thead>
+										<tbody>
+
+											<th:lock th:each="peopleInsurranced: ${contract.peopleInsurrancedDTOs}">
+												<tr>
+													<td colspan="6" class="text-center"><h3
+															th:text="${peopleInsurranced.name}"></h3></td>
+												</tr>
+												<tr>
+													<td th:text="${peopleInsurranced.productName}"></td>
+													<td th:text="${peopleInsurranced.forceDate}"></td>
+													<td th:text="${peopleInsurranced.expiredDate}"></td>
+													<td th:text="${peopleInsurranced.amountMoney}"></td>
+													<td th:text="${peopleInsurranced.periodCostFee}"></td>
+													<td th:text="${peopleInsurranced.status}"></td>
+												</tr>
+											</th:lock>
+										</tbody>
+									</table>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel-group">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+
+						<div class="row">
+							<div class="col-sm-9">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapse2"><span
+										class="red-text"> > </span><label th:text="#{contract.beneficiarie.title}"></label></a>
+								</h4>
+							</div>
+							<div class="col-sm-3 text-right">
+								<span class="red-text"
+									style="padding-bottom: 20px; font-weight: 300;"> <span
+									class="glyphicon glyphicon-edit"></span><label th:text="#{contract.beneficiarie.editinfo}"></label>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div id="collapse2" class="panel-collapse collapse">
+						<div class="panel-body">
+							<div class="table-responsive">
+								<div align="left">
+									<!-- Default panel contents -->
+
+									<!-- Table -->
+									<table class="table table-bordered">
+										<thead>
+											<tr>
+												<th class="text-center" th:text="#{contract.beneficiarie.name}"></th>
+												<th class="text-center" th:text="#{contract.beneficiarie.rate}"></th>
+
+											</tr>
+										</thead>
+										<tbody>
+
+											<th:lock th:each="beneficiarie: ${contract.beneficiaries}">
+												<tr>
+													<td th:text="${beneficiarie.name}"></td>
+													<td class="text-center" th:text="${beneficiarie.rate}"></td>
+												</tr>
+											</th:lock>
+										</tbody>
+									</table>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel-group">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+
+						<div class="row">
+							<div class="col-sm-9">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" href="#collapse3"><span
+										class="red-text"> > </span> <label th:text="#{contract.agencyservecontract.title}"></label></a>
+								</h4>
+							</div>
+							<div class="col-sm-3 text-right">
+								<span class="red-text"
+									style="padding-bottom: 20px; font-weight: 300;"> <span
+									class="glyphicon glyphicon-edit"></span> <label th:text="#{contract.agencyservecontract.editinfo}"></label>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div id="collapse3" class="panel-collapse collapse">
+						<div class="panel-body">
+							<div class="panel panel-default table-responsive">
+								<div align="left">
+									<!-- Default panel contents -->
+
+									<!-- Table -->
+									<table class="table table-bordered">
+										<thead>
+											<tr>
+												<th class="text-center" th:text="#{contract.agencyservecontract.name}"></th>
+												<th class="text-center" th:text="#{contract.agencyservecontract.mobile1}"></th>
+												<th class="text-center" th:text="#{contract.agencyservecontract.mobile2}"></th>
+												<th class="text-center" th:text="#{contract.agencyservecontract.email}"></th>
+											</tr>
+										</thead>
+										<tbody>
+											<th:lock
+												th:each="agencyServeContract: ${contract.agencyServeContracts}">
+												<tr>
+													<td th:text="${agencyServeContract.name}"></td>
+													<td class="text-center"
+														th:text="${agencyServeContract.mobileNo1}	"></td>
+													<td class="text-center"
+														th:text="${agencyServeContract.mobileNo2}"></td>
+													<td class="text-center"
+														th:text="${agencyServeContract.email}"></td>
+												</tr>
+											</th:lock>
+										</tbody>
+									</table>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel panel-default table-responsive">
+				<!-- Default panel contents -->
+				<!-- Table -->
+				<table class="table table-bordered">
+					<thead>
+						<tr class="bg-defaut">
+							<th colspan="3"><h4 th:text="#{contract.transactionhistory.title}"></h4></th>
+						</tr>
+					</thead>
+					<thead>
+						<tr>
+							<th class="text-center" th:text="#{contract.transactionhistory.kind}"></th>
+							<th class="text-center" th:text="#{contract.transactionhistory.date}"></th>
+							<th class="text-center" th:text="#{contract.transactionhistory.detail}"></th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<th:lock
+							th:each="transactionHistorie: ${contract.transactionHistories}">
+							<tr>
+								<td th:text="${transactionHistorie.transactionKind}"></td>
+								<td class="text-center" th:text="${transactionHistorie.date}"></td>
+								<td class="text-center"><a href="#"><span
+										class="red-text" data-toggle="modal" id="myBtn"
+										th:attr="onclick='onShowModal(\''+ #{contract.transactionhistory.kind} +'\',\''+ ${transactionHistorie.transactionKind} +'\',\''+ #{contract.transactionhistory.date1} +'\',\''+ ${transactionHistorie.date} +'\',\''+ #{contract.transactionhistory.date1} +'\',\''+ '1.900.000' +'\',\''+ #{contract.transactionhistory.invoieinfo} +'\',\''+ #{contract.transactionhistory.invoiedetail} +'\');'" th:text="#{contract.transactionhistory.invoiedetail}"></span></a></td>
+							</tr>
+						</th:lock>
+					</tbody>
+
+
+					<!-- data-target="#myModal" -->
+				</table>
+				<script th:inline="javascript">
+					/*<![CDATA[*/
+					function onShowModal(kind, kind1, date, date1, amount, amount1 ,info, info1) {
+						var html = 
+							"<tr>"+
+								"<td>"+kind+"</td>"+
+								"<td>"+kind1+"</td>"+
+							"</tr>"+
+							"<tr>"+
+								"<td>"+date+"</td>"+
+								"<td>"+date1+"</td>"+
+							"</tr>"+
+							"<tr>"+
+								"<td>"+amount+"</td>"+
+								"<td>"+amount1+"</td>"+
+							"</tr>"+
+							"<tr>"+
+								"<td>"+info+"</td>"+
+								"<td class='red-text'><a href='http://www.google.com'><span class='red-text'>"+
+								info1+"</span></a></td>"+
+							"</tr>";		
+						$("#bodyModal").html(html);
+						$("#myModal").modal();
+					}
+					/*]]>*/
+				</script>
+			</div>
+		</div>
+
+	</div>
+	<!-- end Danh sach hop dong -->
+</div>
+
+
+<div layout:fragment="popup">
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>contract.transactionhistory.detail.title
+					<h4 class="modal-title" th:text="#{contract.transactionhistory.detail.title}"></h4>
+				</div>
+				<div class="modal-body">
+					<table class="table table-bordered">
+						<tbody id="bodyModal">
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</html>
